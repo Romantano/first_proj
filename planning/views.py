@@ -67,7 +67,10 @@ def changes(request, period_id, change_id=None, del_id=None):
         # Если функция получила параметр change_id
         if change_id:
             # получаем данные из записи по полученному id
-            change = ChangeBalance.objects.get(id=change_id)
+            try:
+                change = ChangeBalance.objects.get(id=change_id)
+            except:
+                return redirect('/changes/' + period_id)
             data = {
                 'date': change.date,
                 'sum': abs(change.sum),

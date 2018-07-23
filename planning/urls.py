@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from . import views
+from . import views, apis
 
 urlpatterns = [
     url(r'create_period/', views.create_period),
@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'changes/(?P<period_id>\d+)/$', views.changes),
     url(r'changes/(?P<period_id>\d+)/(?P<change_id>\d+)/$', views.changes),
     url(r'changes/(?P<period_id>\d+)/del(?P<del_id>\d+)/$', views.changes),
+    url(r'api/get_periods/', apis.get_period),
 ]
