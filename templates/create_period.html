@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание периода</title>
+    <style type="text/css">
+   .block {
+    width: 1021px;
+    background: #BCCBDA;
+    margin: auto;
+    padding: 20px;
+    padding-right: 20px;
+    border: solid 1px black;
+   }
+    </style>
+</head>
+<body>
+<div class="block">
+    <h2> Период</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Создать период">
+    </form>
+</div>
+</body>
+</html>

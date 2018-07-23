@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выбрать период</title>
+    <style type="text/css">
+   .block {
+    width: 600px;
+    background: #BCCBDA;
+    margin: auto;
+    padding: 20px;
+    padding-right: 20px;
+    border: solid 1px black;
+   }
+    </style>
+</head>
+<body>
+<div class="block">
+    <h2>Выбирите период или <a href="/create_period"> создайте новый</a></h2>
+    <table cellpadding="5" cellspacing="0" border="1">
+            <tr>
+                <td width="180">Название периода:</td>
+                <td width="150">Начало периода:</td>
+                <td width="150">Конец периода:</td>
+            </tr>
+         {% for place in periods %}
+                <tr>
+                    <td><a href="/changes/{{ place.id }}">{{ place.name }}</a></td>
+                    <td><a href="/changes/{{ place.id }}">{{ place.start_day }}</a></td>
+                    <td><a href="/changes/{{ place.id }}">{{ place.end_day }}</a></td>
+                </tr>
+
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
