@@ -6,6 +6,7 @@ from django.db import models
 # Модель Периода
 class Period(models.Model):
     name = models.CharField('Название периода', max_length=30, blank=False)
+    # Поле описание так нигде и не использовалось. Пусть будет)))
     description = models.TextField('Описание периода', blank=True)
     # Начало периода по-умолчанию = текущая дата
     start_day = models.DateField('Начало периода', default=datetime.date.today)
