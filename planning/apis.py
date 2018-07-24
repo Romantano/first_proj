@@ -15,7 +15,7 @@ class GetPeriod(APIView):
         return Response(serializer.data)
 
 
-class GetChanges(APIView):
+class GetAllChanges(APIView):
 
     def get(self, request):
         changes = ChangeBalance.objects.all()

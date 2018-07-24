@@ -4,6 +4,10 @@ from .forms import ChangeBalanceForm, PeriodForm
 from .models import ChangeBalance, Period
 
 
+def home(request):
+    return render(request, 'index.html', {})
+
+
 # Данная вьюха отвечает за отображение созданных периодов
 def period(request):
     if Period.objects.all().count() > 0:
