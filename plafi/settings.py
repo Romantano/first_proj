@@ -25,7 +25,7 @@ SECRET_KEY = '0f3ovtonr#z6g8y^9e17=hc+p#z3i7dxfgn0*64dn6%335t_e$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['plafi.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -120,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
