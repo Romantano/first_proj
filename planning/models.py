@@ -17,7 +17,7 @@ class Period(models.Model):
     class Meta:
         verbose_name = 'Период'
         verbose_name_plural = 'Периоды'
-        ordering = ['-id']
+        ordering = ['start_day']
 
     def __str__(self):
         return self.name
@@ -42,7 +42,7 @@ class ChangeBalance(models.Model):
     class Meta:
         verbose_name = 'Изменение'
         verbose_name_plural = 'Изменения'
-        ordering = ['-id']
+        ordering = ['date']
 
     def __str__(self):
         return str(self.sum)
