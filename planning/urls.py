@@ -10,6 +10,6 @@ urlpatterns = [
     url(r'changes/(?P<period_id>\d+)/del(?P<del_id>\d+)/$', views.changes),
 
     # APIs
-    url(r'api/get_periods/$', apis.GetPeriod.as_view()),
-    url(r'api/get_changes_all/$', apis.GetAllChanges.as_view()),
+    url(r'api/periods/$', apis.GetPeriod.as_view()),
+    url(r'api/changes_all/$', apis.GetAllChanges.as_view()),
 ]
